@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proyecto.spring.zerotoheroapp.models.Empleados;
+import com.proyecto.spring.zerotoheroapp.models.dto.ClaseDTO;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -19,14 +20,18 @@ public class EjemploRestController {
     
     //@RequestMapping(path = "/detalles_info2", method = RequestMethod.GET)
 
-    public Map<String, Object> detalles_info2() {
+    // public Map<String, Object> detalles_info2() {
+    public ClaseDTO detalles_info() {
+        // Empleados empleado1 = new Empleados("Juan", "Rodriguez","Calle Falsa","Dev",20,12345678,001);
 
-        Empleados empleado1 = new Empleados("Juan", "Rodriguez","Calle Falsa","Dev",20,12345678,001);
-
-        Map<String, Object> respuesta = new HashMap<>();
-        respuesta.put("Empleado", "Datos empleado");
-        respuesta.put("ZeroToHeroJavaEmpleado", empleado1);
+        // Map<String, Object> respuesta = new HashMap<>();
+        // respuesta.put("Empleado", "Datos empleado");
+        // respuesta.put("ZeroToHeroJavaEmpleado", empleado1);
         
-        return respuesta;
+        ClaseDTO usuario1 = new ClaseDTO();
+        usuario1.setTitulo("Administrador");
+        usuario1.setUsuario("ZeroToHeroUser");
+
+        return usuario1;
     }
 }
