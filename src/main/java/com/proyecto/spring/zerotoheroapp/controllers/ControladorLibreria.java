@@ -7,6 +7,7 @@ import com.proyecto.spring.zerotoheroapp.models.Libros;
 import com.proyecto.spring.zerotoheroapp.repository.RepoLibros;
 import com.proyecto.spring.zerotoheroapp.services.ServicioLibro;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,15 @@ public class ControladorLibreria {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     
+    }
+    
+    @GetMapping("/clone")
+    public String probarClone() {
+        Libros original = new Libros(1L,"Miguel de Cervantes", "El Quijote", LocalDate.of(1605, 1, 16));
+        Libros copia = original.clone();
+        copia.setIdLibro(8);
+        copia.setTitulo("Copia de prueba");
+        return "Original: " + original.toString() + " | Copia: " + copia.toString();
     }
     
 
