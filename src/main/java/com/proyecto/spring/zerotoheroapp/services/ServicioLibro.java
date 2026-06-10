@@ -3,6 +3,7 @@ package com.proyecto.spring.zerotoheroapp.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.spring.zerotoheroapp.models.Libros;
@@ -13,6 +14,7 @@ public class ServicioLibro implements IServicioLibro {
 
     private final IRepoLibros irepo;
 
+    @Autowired
     public ServicioLibro(IRepoLibros irepo){
         this.irepo = irepo;
     }
