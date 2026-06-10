@@ -9,8 +9,7 @@ public class ValidaLibros {
 
     public Libros libro;
 
-    public Boolean tituloValido(){
-        
+    public Boolean tituloValido() {
         return libro.getTitulo() !=null && !libro.getTitulo().isBlank();
     }
 }
